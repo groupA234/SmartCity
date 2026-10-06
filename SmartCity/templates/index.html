@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+ <html lang="en"> 
+    <head> 
+        <meta charset="UTF-8"> 
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sign Up</title>
+<style>
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+    body {
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 30px 15px;
+        background: linear-gradient(
+            135deg,
+            #e8f6ff,
+            #f7fbfd
+        );
+    }
+    .form {
+        width: 100%;
+        max-width: 600px;
+        padding: 35px;
+        background: #ffffff;
+        border-radius: 20px;
+        border: 1px solid #e5e7eb;
+        box-shadow:
+            0 10px 35px rgba(0, 0, 0, 0.10);
+    }
+    .title {
+        text-align: center;
+        font-size: 30px;
+        font-weight: 700;
+        color: #087ea4;
+
+        margin-bottom: 8px;
+    }
+    .message {
+        text-align: center;
+        color: #6b7280;
+        font-size: 15px;
+        line-height: 1.5;
+        margin-bottom: 30px;
+    }
+    .flex {
+        display: flex;
+        width: 100%;
+        gap: 18px;
+    }
+    .flex label {
+        width: 50%;
+    }
+    .form label {
+        position: relative;
+        display: block;
+        margin-bottom: 22px;
+    }
+    .form label .input,
+    .form label select {
+        width: 100%;
+        height: 55px;
+        padding: 18px 14px 5px;
+        border: 1px solid #d1d5db;
+        border-radius: 10px;
+        background-color: #f9fafb;
+        color: #1f2937;
+        outline: none;
+        font-size: 15px;
+        transition: 0.25s ease;
+    }
+
+    .form label .input:focus,
+    .form label select:focus {
+        border-color: #00a8d6;
+        background-color: #ffffff;
+        box-shadow:
+            0 0 0 3px rgba(0, 168, 214, 0.12);
+    }
+  
+    .form label .input + span {
+        position: absolute;
+        left: 14px;
+        top: 18px;
+        color: #6b7280;
+        font-size: 14px;
+        pointer-events: none;
+        transition: 0.2s ease;
+    }
+    .form label .input:focus + span,
+    .form label .input:not(:placeholder-shown) + span {
+        top: 5px;
+        font-size: 11px;
+        font-weight: 600;
+        color: #008bb5;
+    }
+
+    .select-label span {
+        position: absolute;
+        left: 14px;
+        top: 5px;
+        font-size: 11px;
+        font-weight: 600;
+        color: #008bb5;
+        z-index: 1;
+    }
+    .select-label select {
+        padding: 20px 14px 5px !important;
+    }
+
+    .password-info {
+        font-size: 12px;
+        color: #6b7280;
+        margin-top: -12px;
+        margin-bottom: 20px;
+    }
+
+    .submit {
+        width: 100%;
+        border: none;
+        outline: none;
+        padding: 15px;
+        border-radius: 10px;
+        color: white;
+        font-size: 16px;
+        font-weight: 600;
+        cursor: pointer;
+        background: linear-gradient(
+            135deg,
+            #00a8d6,
+            #007fa3
+        );
+        transition: 0.25s ease;
+    }
+    .submit:hover {
+        transform: translateY(-1px);
+        box-shadow:
+            0 6px 15px rgba(0, 128, 165, 0.25);
+    }
+    .submit:active {
+        transform: translateY(0);
+    }
+  
+    .signin {
+        text-align: center;
+        font-size: 14px;
+        color: #6b7280;
+        margin-top: 22px;
+    }
+
+    .signin a {
+        color: #008bb5;
+
+        text-decoration: none;
+
+        font-weight: 600;
+    }
+    .signin a:hover {
+        text-decoration: underline;
+    }
+
+    @media (max-width: 600px) {
+        .form {
+            padding: 25px 20px;
+        }
+        .flex {
+            flex-direction: column;
+            gap: 0;
+        }
+        .flex label {
+            width: 100%;
+        }
+        .title {
+            font-size: 26px;
+        }
+    }
+</style>
+</head>
+ <body> 
+    <form class="form" id="signupForm">
+<p class="title">Create Account</p>
+<p class="message">
+    Sign up to create your account. Please fill in the required information below.
+</p>
+<div class="flex"> 
+    <label>
+        <input
+            class="input"
+            type="text"
+            id="firstName"
+            name="firstName"
+            placeholder=" "
+            required
+        >
+        <span>First Name</span>
+    </label>
+    <label>
+        <input
+            class="input"
+            type="text"
+            id="secondName"
+            name="secondName"
+            placeholder=" "
+        >
+        <span>Second Name (Optional)</span>
+    </label>
+</div>
+<label>
+    <input
+        class="input"
+        type="text"
+        id="lastName"
+        name="lastName"
+        placeholder=" "
+        required
+    >
+    <span>Last Name</span>
+</label>
+<label>
+    <input
+        class="input"
+        type="text"
+        id="idNumber"
+        name="idNumber"
+        placeholder=" "
+        required
+    >
+    <span>ID Number</span>
+</label>
+<label class="select-label">
+    <span>Gender</span>
+    <select
+        id="gender"
+        name="gender"
+        required
+    >
+        <option value="" disabled selected>
+            Select Gender
+        </option>
+        <option value="Male">
+            Male
+        </option>
+        <option value="Female">
+            Female
+        </option>
+    </select>
+</label>
+<label>
+    <input
+        class="input"
+        type="text"
+        id="city"
+        name="city"
+        placeholder=" "
+        required
+    >
+    <span>City</span>
+</label>
+<label>
+    <input
+        class="input"
+        type="password"
+        id="password"
+        name="password"
+        placeholder=" "
+        minlength="8"
+        required
+    >
+    <span>Password</span>
+</label>
+<p class="password-info">
+    Password must contain at least 8 characters.
+</p>
+<label>
+    <input
+        class="input"
+        type="password"
+        id="confirmPassword"
+        name="confirmPassword"
+        placeholder=" "
+        minlength="8"
+        required
+    >
+    <span>Confirm Password</span>
+</label>
+<button
+    class="submit"
+    type="submit"
+>
+    Sign Up
+</button>
+<p class="signin">
+    Already have an account?
+    <a href="#">Sign In</a>
+</p>
+</form> 
+<script> 
+const form = document.getElementById("signupForm");
+ const password = document.getElementById("password"); 
+ const confirmPassword = document.getElementById("confirmPassword"); 
+  confirmPassword.addEventListener( "input", function () { if ( password.value !== confirmPassword.value )
+     { confirmPassword.setCustomValidity( "Passwords do not match." ); 
+
+     }
+      else { confirmPassword.setCustomValidity(""); } } ); 
+     password.addEventListener( "input", function () { if ( confirmPassword.value !== "" && password.value !== confirmPassword.value )
+      { confirmPassword.setCustomValidity( "Passwords do not match." ); 
+
+      } 
+      else { confirmPassword.setCustomValidity(""); } } ); 
+      form.addEventListener( "submit", function (event) { event.preventDefault();
+         if (password.value.length < 8) { alert( "Password must contain at least 8 characters." );
+          password.focus(); 
+          return; 
+        } 
+        if ( password.value !== confirmPassword.value ) { alert( "Passwords do not match." ); 
+        confirmPassword.focus(); 
+        return;
+     } 
+     alert( "Signup successful!" ); } );
+ </script>
+ </body>
+ </html>

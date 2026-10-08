@@ -1,0 +1,838 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Smart City Portal</title>
+  <!-- Font Awesome 6 CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- ===== SIDEBAR ===== -->
+  <aside class="sidebar">
+    <div class="sidebar-brand">
+      <div class="brand-icon"><i class="fas fa-city"></i></div>
+      <div class="brand-text">
+        <span class="brand-name">SmartCity</span>
+        <span class="brand-sub">Citizen Portal</span>
+      </div>
+    </div>
+
+    <nav class="sidebar-nav">
+      <ul>
+        <li class="nav-item active" data-section="home">
+          <span class="nav-icon"><i class="fas fa-house"></i></span>
+          <span class="nav-label">Dashboard</span>
+        </li>
+        <li class="nav-item" data-section="taxes">
+          <span class="nav-icon"><i class="fas fa-credit-card"></i></span>
+          <span class="nav-label">Pay Taxes</span>
+        </li>
+        <li class="nav-item" data-section="report">
+          <span class="nav-icon"><i class="fas fa-triangle-exclamation"></i></span>
+          <span class="nav-label">Report Problem</span>
+        </li>
+        <li class="nav-item" data-section="waste">
+          <span class="nav-icon"><i class="fas fa-recycle"></i></span>
+          <span class="nav-label">Waste Management</span>
+        </li>
+        <li class="nav-item" data-section="news">
+          <span class="nav-icon"><i class="fas fa-newspaper"></i></span>
+          <span class="nav-label">News</span>
+        </li>
+        <li class="nav-item" data-section="about">
+          <span class="nav-icon"><i class="fas fa-circle-info"></i></span>
+          <span class="nav-label">About Us</span>
+        </li>
+      </ul>
+    </nav>
+
+    <div class="sidebar-bottom">
+      <div class="nav-item" data-section="settings">
+        <span class="nav-icon"><i class="fas fa-gear"></i></span>
+        <span class="nav-label">Settings</span>
+      </div>
+      <div class="sidebar-user">
+        <div class="user-avatar">JD</div>
+        <div class="user-info">
+          <span class="user-name">John Doe</span>
+          <span class="user-role">Citizen</span>
+        </div>
+      </div>
+    </div>
+  </aside>
+
+  <!-- ===== MAIN AREA ===== -->
+  <div class="main-wrapper">
+
+    <!-- TOP BAR -->
+    <header class="topbar">
+      <div class="topbar-left">
+        <button class="menu-toggle" id="menuToggle"><i class="fas fa-bars"></i></button>
+        <div class="page-title" id="pageTitle">Dashboard</div>
+      </div>
+      <div class="topbar-right">
+        <div class="search-box">
+          <span><i class="fas fa-magnifying-glass"></i></span>
+          <input type="text" placeholder="Search services…" />
+        </div>
+        <div class="topbar-notif"><i class="fas fa-bell"></i><span class="badge">3</span></div>
+        <div class="topbar-avatar">JD</div>
+      </div>
+    </header>
+
+    <!-- PAGE CONTENT -->
+    <main class="content" id="mainContent">
+
+      <!-- ======= HOME / DASHBOARD ======= -->
+      <section class="section active" id="home">
+
+        <!-- Hero Banner -->
+        <div class="hero">
+          <div class="hero-text">
+            <p class="hero-tag">Welcome to the Future</p>
+            <h1>Building a <span>Smarter</span><br/>City Together</h1>
+            <p class="hero-desc">
+              Your one-stop digital portal to pay taxes, report issues, track
+              waste collection, and stay informed — all in one place.
+            </p>
+            <div class="hero-buttons">
+              <button class="btn-primary" data-goto="report">
+                <i class="fas fa-triangle-exclamation"></i> Report a Problem
+              </button>
+              <button class="btn-outline" data-goto="news">
+                <i class="fas fa-newspaper"></i> Latest News
+              </button>
+            </div>
+          </div>
+          <div class="hero-visual">
+            <div class="city-graphic">
+              <div class="building b1"></div>
+              <div class="building b2"></div>
+              <div class="building b3"></div>
+              <div class="building b4"></div>
+              <div class="building b5"></div>
+              <div class="road"></div>
+              <div class="tree t1"><i class="fas fa-tree"></i></div>
+              <div class="tree t2"><i class="fas fa-tree"></i></div>
+              <div class="tree t3"><i class="fas fa-tree"></i></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Stats Strip -->
+        <div class="stats-strip">
+          <div class="stat-card">
+            <div class="stat-icon" style="background:#e0f7fa;">
+              <i class="fas fa-credit-card" style="color:#0097a7;"></i>
+            </div>
+            <div>
+              <div class="stat-value">12,540</div>
+              <div class="stat-label">Taxes Paid This Year</div>
+            </div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-icon" style="background:#fce4ec;">
+              <i class="fas fa-triangle-exclamation" style="color:#e91e63;"></i>
+            </div>
+            <div>
+              <div class="stat-value">3,210</div>
+              <div class="stat-label">Problems Reported</div>
+            </div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-icon" style="background:#e8f5e9;">
+              <i class="fas fa-recycle" style="color:#388e3c;"></i>
+            </div>
+            <div>
+              <div class="stat-value">98%</div>
+              <div class="stat-label">Waste Collection Rate</div>
+            </div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-icon" style="background:#fff3e0;">
+              <i class="fas fa-newspaper" style="color:#f57c00;"></i>
+            </div>
+            <div>
+              <div class="stat-value">48</div>
+              <div class="stat-label">News Articles This Month</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Quick Access -->
+        <div class="section-heading">Quick Access</div>
+        <div class="quick-grid">
+          <div class="quick-card" data-goto="taxes">
+            <div class="qc-icon"><i class="fas fa-credit-card"></i></div>
+            <div class="qc-title">Pay Taxes</div>
+            <div class="qc-desc">Submit your annual or monthly tax payments securely online.</div>
+            <div class="qc-arrow"><i class="fas fa-arrow-right"></i></div>
+          </div>
+          <div class="quick-card" data-goto="report">
+            <div class="qc-icon"><i class="fas fa-triangle-exclamation"></i></div>
+            <div class="qc-title">Report a Problem</div>
+            <div class="qc-desc">Flag potholes, broken streetlights, water leaks and more.</div>
+            <div class="qc-arrow"><i class="fas fa-arrow-right"></i></div>
+          </div>
+          <div class="quick-card" data-goto="waste">
+            <div class="qc-icon"><i class="fas fa-recycle"></i></div>
+            <div class="qc-title">Waste Management</div>
+            <div class="qc-desc">Track schedules and request special waste pickup.</div>
+            <div class="qc-arrow"><i class="fas fa-arrow-right"></i></div>
+          </div>
+          <div class="quick-card" data-goto="news">
+            <div class="qc-icon"><i class="fas fa-newspaper"></i></div>
+            <div class="qc-title">City News</div>
+            <div class="qc-desc">Stay updated on city developments and announcements.</div>
+            <div class="qc-arrow"><i class="fas fa-arrow-right"></i></div>
+          </div>
+        </div>
+
+        <!-- Recent Activity -->
+        <div class="section-heading" style="margin-top:32px;">Recent Activity</div>
+        <div class="activity-list">
+          <div class="activity-item">
+            <div class="act-dot green"></div>
+            <div class="act-info">
+              <span class="act-title">Tax payment successful</span>
+              <span class="act-time">Today, 09:14 AM</span>
+            </div>
+            <span class="act-badge green">Paid</span>
+          </div>
+          <div class="activity-item">
+            <div class="act-dot orange"></div>
+            <div class="act-info">
+              <span class="act-title">Pothole reported on Main St.</span>
+              <span class="act-time">Yesterday, 03:30 PM</span>
+            </div>
+            <span class="act-badge orange">Pending</span>
+          </div>
+          <div class="activity-item">
+            <div class="act-dot blue"></div>
+            <div class="act-info">
+              <span class="act-title">Waste pickup scheduled – Zone 4</span>
+              <span class="act-time">Oct 6, 08:00 AM</span>
+            </div>
+            <span class="act-badge blue">Scheduled</span>
+          </div>
+          <div class="activity-item">
+            <div class="act-dot green"></div>
+            <div class="act-info">
+              <span class="act-title">Streetlight issue resolved</span>
+              <span class="act-time">Oct 5, 02:15 PM</span>
+            </div>
+            <span class="act-badge green">Resolved</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- ======= PAY TAXES ======= -->
+      <section class="section" id="taxes">
+        <div class="page-header">
+          <h2><i class="fas fa-credit-card"></i> Pay Taxes</h2>
+          <p>Manage and submit your city tax payments securely.</p>
+        </div>
+        <div class="card-row">
+          <div class="info-card accent-blue">
+            <div class="ic-label">Outstanding Balance</div>
+            <div class="ic-value">$1,240.00</div>
+            <div class="ic-note">Due by Nov 30, 2026</div>
+          </div>
+          <div class="info-card accent-green">
+            <div class="ic-label">Last Payment</div>
+            <div class="ic-value">$620.00</div>
+            <div class="ic-note">Paid on Oct 1, 2026</div>
+          </div>
+          <div class="info-card accent-orange">
+            <div class="ic-label">Tax Year</div>
+            <div class="ic-value">2026</div>
+            <div class="ic-note">Annual cycle</div>
+          </div>
+        </div>
+
+        <div class="form-card">
+          <h3>Make a Payment</h3>
+          <div class="form-grid">
+            <div class="form-group">
+              <label>Full Name</label>
+              <input type="text" placeholder="John Doe" />
+            </div>
+            <div class="form-group">
+              <label>Citizen ID</label>
+              <input type="text" placeholder="SC-00123456" />
+            </div>
+            <div class="form-group">
+              <label>Tax Type</label>
+              <select>
+                <option>Property Tax</option>
+                <option>Income Tax</option>
+                <option>Business Tax</option>
+                <option>Vehicle Tax</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Amount ($)</label>
+              <input type="number" placeholder="0.00" />
+            </div>
+            <div class="form-group">
+              <label>Payment Method</label>
+              <select>
+                <option>Credit / Debit Card</option>
+                <option>Bank Transfer</option>
+                <option>Mobile Money</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Payment Date</label>
+              <input type="date" />
+            </div>
+          </div>
+          <button class="btn-primary" style="margin-top:8px;">
+            <i class="fas fa-paper-plane"></i> Submit Payment
+          </button>
+        </div>
+
+        <div class="section-heading">Payment History</div>
+        <div class="table-wrapper">
+          <table>
+            <thead>
+              <tr><th>Date</th><th>Tax Type</th><th>Amount</th><th>Status</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Oct 1, 2026</td><td>Property Tax</td><td>$620.00</td><td><span class="badge-status green">Paid</span></td></tr>
+              <tr><td>Jul 1, 2026</td><td>Income Tax</td><td>$480.00</td><td><span class="badge-status green">Paid</span></td></tr>
+              <tr><td>Apr 3, 2026</td><td>Vehicle Tax</td><td>$200.00</td><td><span class="badge-status green">Paid</span></td></tr>
+              <tr><td>Jan 5, 2026</td><td>Business Tax</td><td>$950.00</td><td><span class="badge-status orange">Partial</span></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- ======= REPORT PROBLEM ======= -->
+      <section class="section" id="report">
+        <div class="page-header">
+          <h2><i class="fas fa-triangle-exclamation"></i> Report a Problem</h2>
+          <p>Help us keep the city running by reporting issues in your neighbourhood.</p>
+        </div>
+
+        <div class="problem-categories">
+          <div class="prob-cat active-cat"><i class="fas fa-road"></i> Roads</div>
+          <div class="prob-cat"><i class="fas fa-lightbulb"></i> Streetlights</div>
+          <div class="prob-cat"><i class="fas fa-droplet"></i> Water &amp; Drainage</div>
+          <div class="prob-cat"><i class="fas fa-leaf"></i> Parks</div>
+          <div class="prob-cat"><i class="fas fa-bus"></i> Transport</div>
+          <div class="prob-cat"><i class="fas fa-lock"></i> Safety</div>
+        </div>
+
+        <div class="form-card">
+          <h3>Submit a Report</h3>
+          <div class="form-grid">
+            <div class="form-group">
+              <label>Your Name</label>
+              <input type="text" placeholder="Jane Smith" />
+            </div>
+            <div class="form-group">
+              <label>Contact Email</label>
+              <input type="email" placeholder="jane@email.com" />
+            </div>
+            <div class="form-group">
+              <label>Problem Category</label>
+              <select>
+                <option>Roads &amp; Potholes</option>
+                <option>Streetlights</option>
+                <option>Water &amp; Drainage</option>
+                <option>Parks &amp; Green Areas</option>
+                <option>Public Transport</option>
+                <option>Safety &amp; Security</option>
+                <option>Other</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Location / Address</label>
+              <input type="text" placeholder="123 Main Street, Zone 2" />
+            </div>
+            <div class="form-group full-span">
+              <label>Description</label>
+              <textarea rows="4" placeholder="Describe the problem in detail…"></textarea>
+            </div>
+            <div class="form-group full-span">
+              <label>Attach Photo (optional)</label>
+              <div class="file-drop">
+                <i class="fas fa-paperclip"></i> Drag &amp; drop or click to upload
+              </div>
+            </div>
+          </div>
+          <button class="btn-primary">
+            <i class="fas fa-paper-plane"></i> Submit Report
+          </button>
+        </div>
+
+        <div class="section-heading">My Reports</div>
+        <div class="reports-list">
+          <div class="report-card">
+            <div class="rep-header">
+              <span class="rep-cat"><i class="fas fa-road"></i> Roads</span>
+              <span class="rep-badge orange">In Progress</span>
+            </div>
+            <p class="rep-title">Large pothole on Oak Avenue near bus stop</p>
+            <p class="rep-meta">Submitted: Oct 7, 2026 · Ref: RPT-00451</p>
+          </div>
+          <div class="report-card">
+            <div class="rep-header">
+              <span class="rep-cat"><i class="fas fa-lightbulb"></i> Streetlights</span>
+              <span class="rep-badge green">Resolved</span>
+            </div>
+            <p class="rep-title">Broken streetlight at Pine &amp; 3rd intersection</p>
+            <p class="rep-meta">Submitted: Oct 5, 2026 · Ref: RPT-00449</p>
+          </div>
+          <div class="report-card">
+            <div class="rep-header">
+              <span class="rep-cat"><i class="fas fa-droplet"></i> Water</span>
+              <span class="rep-badge red">Open</span>
+            </div>
+            <p class="rep-title">Water pipe leaking on Elm Street — flooding pavement</p>
+            <p class="rep-meta">Submitted: Oct 3, 2026 · Ref: RPT-00446</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ======= WASTE MANAGEMENT ======= -->
+      <section class="section" id="waste">
+        <div class="page-header">
+          <h2><i class="fas fa-recycle"></i> Waste Management</h2>
+          <p>Track collection schedules, request pickups, and learn about recycling.</p>
+        </div>
+
+        <div class="card-row">
+          <div class="info-card accent-green">
+            <div class="ic-label">Next Collection</div>
+            <div class="ic-value">Oct 10</div>
+            <div class="ic-note">Zone 4 — General Waste</div>
+          </div>
+          <div class="info-card accent-blue">
+            <div class="ic-label">Recycling Day</div>
+            <div class="ic-value">Oct 12</div>
+            <div class="ic-note">Zone 4 — Recyclables</div>
+          </div>
+          <div class="info-card accent-orange">
+            <div class="ic-label">Bulk Pickup</div>
+            <div class="ic-value">Oct 18</div>
+            <div class="ic-note">Scheduled Request</div>
+          </div>
+        </div>
+
+        <div class="waste-zones">
+          <div class="section-heading">Collection Schedule by Zone</div>
+          <div class="zone-grid">
+            <div class="zone-card">
+              <div class="zone-label">Zone 1</div>
+              <div class="zone-day">Monday &amp; Thursday</div>
+              <div class="zone-type">General + Recyclables</div>
+            </div>
+            <div class="zone-card active-zone">
+              <div class="zone-label">Zone 2 <span class="your-zone">Your Zone</span></div>
+              <div class="zone-day">Tuesday &amp; Friday</div>
+              <div class="zone-type">General + Recyclables</div>
+            </div>
+            <div class="zone-card">
+              <div class="zone-label">Zone 3</div>
+              <div class="zone-day">Wednesday &amp; Saturday</div>
+              <div class="zone-type">General + Recyclables</div>
+            </div>
+            <div class="zone-card">
+              <div class="zone-label">Zone 4</div>
+              <div class="zone-day">Monday &amp; Wednesday</div>
+              <div class="zone-type">General + Green Waste</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-card">
+          <h3>Request Special Pickup</h3>
+          <div class="form-grid">
+            <div class="form-group">
+              <label>Your Name</label>
+              <input type="text" placeholder="John Doe" />
+            </div>
+            <div class="form-group">
+              <label>Address</label>
+              <input type="text" placeholder="456 River Road" />
+            </div>
+            <div class="form-group">
+              <label>Waste Type</label>
+              <select>
+                <option>Bulky Items (furniture, appliances)</option>
+                <option>Garden Waste</option>
+                <option>Electronic Waste (e-waste)</option>
+                <option>Hazardous Waste</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Preferred Date</label>
+              <input type="date" />
+            </div>
+          </div>
+          <button class="btn-primary">
+            <i class="fas fa-truck"></i> Request Pickup
+          </button>
+        </div>
+
+        <div class="recycle-tips">
+          <div class="section-heading">Recycling Tips</div>
+          <div class="tips-grid">
+            <div class="tip-card">
+              <i class="fas fa-trash" style="color:#1d4ed8;"></i>
+              <strong> Blue Bin</strong><br/>Paper, cardboard, plastic bottles, glass
+            </div>
+            <div class="tip-card">
+              <i class="fas fa-seedling" style="color:#16a34a;"></i>
+              <strong> Green Bin</strong><br/>Food scraps, garden clippings, organic waste
+            </div>
+            <div class="tip-card">
+              <i class="fas fa-trash-can" style="color:#dc2626;"></i>
+              <strong> Red Bin</strong><br/>Non-recyclable general household waste
+            </div>
+            <div class="tip-card">
+              <i class="fas fa-bolt" style="color:#d97706;"></i>
+              <strong> Yellow Bin</strong><br/>Electronic waste, batteries, chemicals
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ======= NEWS ======= -->
+      <section class="section" id="news">
+        <div class="page-header">
+          <h2><i class="fas fa-newspaper"></i> City News</h2>
+          <p>The latest announcements, events, and developments in our city.</p>
+        </div>
+
+        <div class="news-filter">
+          <button class="filter-btn active-filter">All</button>
+          <button class="filter-btn">Infrastructure</button>
+          <button class="filter-btn">Environment</button>
+          <button class="filter-btn">Events</button>
+          <button class="filter-btn">Announcements</button>
+        </div>
+
+        <div class="news-featured">
+          <div class="news-img"><i class="fas fa-traffic-light"></i></div>
+          <div class="news-body">
+            <span class="news-tag infrastructure">Infrastructure</span>
+            <h3>New Smart Traffic System Launches Citywide in November</h3>
+            <p>The city council has approved an AI-powered traffic management system that will
+            reduce congestion by up to 35% across all major intersections starting November 2026.</p>
+            <div class="news-meta">Oct 8, 2026 · 5 min read</div>
+          </div>
+        </div>
+
+        <div class="news-grid">
+          <div class="news-card">
+            <div class="nc-img environment"><i class="fas fa-seedling"></i></div>
+            <div class="nc-body">
+              <span class="news-tag environment">Environment</span>
+              <h4>City Plants 10,000 Trees in Green Initiative</h4>
+              <p>The annual green drive surpassed its target planting saplings in parks, roadsides, and public spaces.</p>
+              <div class="news-meta">Oct 6, 2026</div>
+            </div>
+          </div>
+          <div class="news-card">
+            <div class="nc-img event"><i class="fas fa-calendar-star"></i></div>
+            <div class="nc-body">
+              <span class="news-tag event">Event</span>
+              <h4>Smart City Expo 2026 — Register Now</h4>
+              <p>Join innovators and city planners for a 3-day expo showcasing future urban technologies.</p>
+              <div class="news-meta">Oct 5, 2026</div>
+            </div>
+          </div>
+          <div class="news-card">
+            <div class="nc-img infra"><i class="fas fa-bridge"></i></div>
+            <div class="nc-body">
+              <span class="news-tag infrastructure">Infrastructure</span>
+              <h4>Bridge Renovation on River Road Completes Ahead of Schedule</h4>
+              <p>The six-month renovation project delivered two weeks early, reopening to full traffic flow.</p>
+              <div class="news-meta">Oct 3, 2026</div>
+            </div>
+          </div>
+          <div class="news-card">
+            <div class="nc-img announce"><i class="fas fa-bullhorn"></i></div>
+            <div class="nc-body">
+              <span class="news-tag announce">Announcement</span>
+              <h4>New Online Portal for Business Licences Now Live</h4>
+              <p>Business owners can now apply, renew, and track licences entirely through the Smart City portal.</p>
+              <div class="news-meta">Oct 1, 2026</div>
+            </div>
+          </div>
+          <div class="news-card">
+            <div class="nc-img environment"><i class="fas fa-solar-panel"></i></div>
+            <div class="nc-body">
+              <span class="news-tag environment">Environment</span>
+              <h4>Solar Panels Installed on 120 Public Buildings</h4>
+              <p>Phase two of the city's renewable energy programme covers schools, clinics, and municipal offices.</p>
+              <div class="news-meta">Sep 29, 2026</div>
+            </div>
+          </div>
+          <div class="news-card">
+            <div class="nc-img event"><i class="fas fa-person-running"></i></div>
+            <div class="nc-body">
+              <span class="news-tag event">Event</span>
+              <h4>City Marathon Returns — Oct 20, 2026</h4>
+              <p>Registration is open for the annual city marathon. Proceeds go to the Smart Schools Fund.</p>
+              <div class="news-meta">Sep 27, 2026</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ======= ABOUT US ======= -->
+      <section class="section" id="about">
+        <div class="page-header">
+          <h2><i class="fas fa-circle-info"></i> About Us</h2>
+          <p>Learn about our vision, mission, and the team behind the Smart City initiative.</p>
+        </div>
+
+        <div class="about-hero">
+          <div class="about-hero-text">
+            <h3>Our Vision</h3>
+            <p>We envision a connected, efficient, and sustainable city where every citizen
+            has easy access to government services, real-time information, and the tools to
+            shape their community.</p>
+            <p>The Smart City Portal was launched to bridge the gap between citizens and
+            municipal services — replacing long queues and paperwork with seamless digital
+            interactions available 24/7.</p>
+          </div>
+          <div class="about-stats">
+            <div class="as-item"><div class="as-val">250,000+</div><div class="as-lab">Registered Citizens</div></div>
+            <div class="as-item"><div class="as-val">98%</div><div class="as-lab">Service Uptime</div></div>
+            <div class="as-item"><div class="as-val">4.8 <i class="fas fa-star" style="color:#f59e0b;font-size:0.9em;"></i></div><div class="as-lab">Citizen Satisfaction</div></div>
+            <div class="as-item"><div class="as-val">2020</div><div class="as-lab">Year Founded</div></div>
+          </div>
+        </div>
+
+        <div class="section-heading">Our Core Values</div>
+        <div class="values-grid">
+          <div class="value-card">
+            <div class="val-icon"><i class="fas fa-shield-halved"></i></div>
+            <h4>Security &amp; Privacy</h4>
+            <p>All citizen data is encrypted, stored securely, and never shared without explicit consent.</p>
+          </div>
+          <div class="value-card">
+            <div class="val-icon"><i class="fas fa-bolt"></i></div>
+            <h4>Efficiency</h4>
+            <p>We continuously improve systems to ensure faster, more reliable service delivery.</p>
+          </div>
+          <div class="value-card">
+            <div class="val-icon"><i class="fas fa-handshake"></i></div>
+            <h4>Inclusivity</h4>
+            <p>Designed for all citizens regardless of age, tech literacy, or physical ability.</p>
+          </div>
+          <div class="value-card">
+            <div class="val-icon"><i class="fas fa-earth-africa"></i></div>
+            <h4>Sustainability</h4>
+            <p>Every initiative is guided by our commitment to a greener and more sustainable city.</p>
+          </div>
+        </div>
+
+        <div class="section-heading">Meet the Team</div>
+        <div class="team-grid">
+          <div class="team-card">
+            <div class="team-avatar" style="background:#3b82f6;">MC</div>
+            <h4>Mayor Collins</h4>
+            <p>City Mayor &amp; Smart City Patron</p>
+          </div>
+          <div class="team-card">
+            <div class="team-avatar" style="background:#10b981;">AL</div>
+            <h4>Amara Lee</h4>
+            <p>Director of Digital Services</p>
+          </div>
+          <div class="team-card">
+            <div class="team-avatar" style="background:#f59e0b;">BM</div>
+            <h4>Ben Mbeki</h4>
+            <p>Head of Infrastructure</p>
+          </div>
+          <div class="team-card">
+            <div class="team-avatar" style="background:#ef4444;">ST</div>
+            <h4>Sara Thomas</h4>
+            <p>Citizen Relations Manager</p>
+          </div>
+        </div>
+
+        <div class="contact-strip">
+          <div class="cs-item"><i class="fas fa-envelope"></i> <a href="#">info@smartcity.gov</a></div>
+          <div class="cs-item"><i class="fas fa-phone"></i> <a href="#">+1 800 SMART-CT</a></div>
+          <div class="cs-item"><i class="fas fa-location-dot"></i> City Hall, 1 Civic Plaza, Downtown</div>
+          <div class="cs-item"><i class="fas fa-clock"></i> Mon–Fri, 8 AM – 5 PM</div>
+        </div>
+      </section>
+
+      <!-- ======= SETTINGS ======= -->
+      <section class="section" id="settings">
+        <div class="page-header">
+          <h2><i class="fas fa-gear"></i> Settings</h2>
+          <p>Manage your account preferences and notification settings.</p>
+        </div>
+
+        <div class="settings-grid">
+          <div class="settings-card">
+            <h3><i class="fas fa-user"></i> Profile</h3>
+            <div class="form-grid">
+              <div class="form-group">
+                <label>Full Name</label>
+                <input type="text" value="John Doe" />
+              </div>
+              <div class="form-group">
+                <label>Email Address</label>
+                <input type="email" value="john.doe@email.com" />
+              </div>
+              <div class="form-group">
+                <label>Phone Number</label>
+                <input type="tel" value="+1 555 0123" />
+              </div>
+              <div class="form-group">
+                <label>Zone</label>
+                <select><option>Zone 2</option><option>Zone 1</option><option>Zone 3</option><option>Zone 4</option></select>
+              </div>
+            </div>
+            <button class="btn-primary" style="margin-top:12px;">
+              <i class="fas fa-floppy-disk"></i> Save Changes
+            </button>
+          </div>
+
+          <div class="settings-card">
+            <h3><i class="fas fa-bell"></i> Notifications</h3>
+            <div class="toggle-list">
+              <div class="toggle-item">
+                <div>
+                  <div class="tg-label">Email Notifications</div>
+                  <div class="tg-desc">Receive updates via email</div>
+                </div>
+                <label class="toggle"><input type="checkbox" checked /><span class="slider"></span></label>
+              </div>
+              <div class="toggle-item">
+                <div>
+                  <div class="tg-label">Tax Reminders</div>
+                  <div class="tg-desc">Alerts before payment due dates</div>
+                </div>
+                <label class="toggle"><input type="checkbox" checked /><span class="slider"></span></label>
+              </div>
+              <div class="toggle-item">
+                <div>
+                  <div class="tg-label">Report Status Updates</div>
+                  <div class="tg-desc">Know when your reports are actioned</div>
+                </div>
+                <label class="toggle"><input type="checkbox" checked /><span class="slider"></span></label>
+              </div>
+              <div class="toggle-item">
+                <div>
+                  <div class="tg-label">Waste Collection Alerts</div>
+                  <div class="tg-desc">Day-before collection reminders</div>
+                </div>
+                <label class="toggle"><input type="checkbox" /><span class="slider"></span></label>
+              </div>
+              <div class="toggle-item">
+                <div>
+                  <div class="tg-label">City News Digest</div>
+                  <div class="tg-desc">Weekly news summary</div>
+                </div>
+                <label class="toggle"><input type="checkbox" checked /><span class="slider"></span></label>
+              </div>
+            </div>
+          </div>
+
+          <div class="settings-card">
+            <h3><i class="fas fa-lock"></i> Security</h3>
+            <div class="form-grid">
+              <div class="form-group full-span">
+                <label>Current Password</label>
+                <input type="password" placeholder="••••••••" />
+              </div>
+              <div class="form-group">
+                <label>New Password</label>
+                <input type="password" placeholder="••••••••" />
+              </div>
+              <div class="form-group">
+                <label>Confirm New Password</label>
+                <input type="password" placeholder="••••••••" />
+              </div>
+            </div>
+            <button class="btn-outline" style="margin-top:12px;">
+              <i class="fas fa-key"></i> Update Password
+            </button>
+          </div>
+
+          <div class="settings-card">
+            <h3><i class="fas fa-palette"></i> Appearance</h3>
+            <div class="theme-options">
+              <div class="theme-opt active-theme"><i class="fas fa-sun"></i> Light</div>
+              <div class="theme-opt"><i class="fas fa-moon"></i> Dark</div>
+              <div class="theme-opt"><i class="fas fa-desktop"></i> System</div>
+            </div>
+            <div class="form-group" style="margin-top:16px;">
+              <label>Language</label>
+              <select><option>English</option><option>French</option><option>Spanish</option><option>Portuguese</option></select>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="footer">
+      <div class="footer-inner">
+        <div class="footer-col">
+          <div class="footer-brand"><i class="fas fa-city"></i> SmartCity Portal</div>
+          <p>Empowering citizens through digital innovation. Your city, your voice, your future.</p>
+          <div class="social-links">
+            <a href="#" title="Twitter"><i class="fab fa-x-twitter"></i></a>
+            <a href="#" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" title="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" title="YouTube"><i class="fab fa-youtube"></i></a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Services</h4>
+          <ul>
+            <li><a href="#" data-goto="taxes"><i class="fas fa-credit-card"></i> Pay Taxes</a></li>
+            <li><a href="#" data-goto="report"><i class="fas fa-triangle-exclamation"></i> Report Problem</a></li>
+            <li><a href="#" data-goto="waste"><i class="fas fa-recycle"></i> Waste Management</a></li>
+            <li><a href="#" data-goto="news"><i class="fas fa-newspaper"></i> City News</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="#"><i class="fas fa-landmark"></i> City Council</a></li>
+            <li><a href="#"><i class="fas fa-folder-open"></i> Public Records</a></li>
+            <li><a href="#"><i class="fas fa-truck-medical"></i> Emergency Services</a></li>
+            <li><a href="#"><i class="fas fa-bus"></i> Transport Authority</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contact Us</h4>
+          <ul class="contact-list">
+            <li><i class="fas fa-envelope"></i> info@smartcity.gov</li>
+            <li><i class="fas fa-phone"></i> +1 800 SMART-CT</li>
+            <li><i class="fas fa-location-dot"></i> 1 Civic Plaza, Downtown</li>
+            <li><i class="fas fa-clock"></i> Mon–Fri, 8 AM – 5 PM</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 SmartCity Portal. All rights reserved.</span>
+        <div class="footer-links">
+          <a href="#"><i class="fas fa-shield"></i> Privacy Policy</a>
+          <a href="#"><i class="fas fa-file-lines"></i> Terms of Service</a>
+          <a href="#"><i class="fas fa-universal-access"></i> Accessibility</a>
+        </div>
+      </div>
+    </footer>
+
+  </div><!-- end main-wrapper -->
+
+  <script src="app.js"></script>
+</body>
+</html>

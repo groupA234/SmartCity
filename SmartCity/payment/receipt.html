@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SmartCities – Payment Receipt</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+
+  <aside class="sidebar">
+    <div class="sidebar__brand">
+      <div class="sidebar__logo">
+        <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <rect width="40" height="40" rx="10" fill="#105652"/>
+          <path d="M8 30 L8 18 L14 12 L20 18 L20 10 L26 10 L26 18 L32 18 L32 30 Z" fill="#fff" opacity="0.9"/>
+          <rect x="17" y="22" width="6" height="8" rx="1" fill="#105652"/>
+        </svg>
+      </div>
+      <span class="sidebar__title">SmartCities</span>
+    </div>
+
+    <nav class="sidebar__nav" aria-label="Main navigation">
+      <ul>
+        <li>
+          <a class="nav-item" href="dashboard.html" data-page="dashboard">
+            <span class="nav-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>
+            </span>
+            <span class="nav-label">Dashboard</span>
+          </a>
+        </li>
+        <li>
+          <a class="nav-item" href="payments.html" data-page="payments">
+            <span class="nav-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="1" y="4" width="22" height="16" rx="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
+            </span>
+            <span class="nav-label">Pay Taxes</span>
+          </a>
+        </li>
+        <li>
+          <a class="nav-item" href="#" data-page="history">
+            <span class="nav-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+            </span>
+            <span class="nav-label">History</span>
+          </a>
+        </li>
+        <li>
+          <a class="nav-item" href="#" data-page="profile">
+            <span class="nav-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+            </span>
+            <span class="nav-label">My Profile</span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+
+    <div class="sidebar__user">
+      <div class="user-avatar" aria-hidden="true">JM</div>
+      <div class="user-info">
+        <span class="user-name">James Mwangi</span>
+        <span class="user-id">ID: SC-2024-00482</span>
+      </div>
+    </div>
+  </aside>
+
+
+  <main class="main">
+
+    <!-- flow -->
+    <nav class="flow" aria-label="Payment flow">
+      <span class="flow__item done">
+        <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" style="width:12px;height:12px;" aria-hidden="true"><polyline points="2 8 6 12 14 4"/></svg>
+        Dashboard
+      </span>
+      <span class="flow__sep">›</span>
+      <span class="flow__item done">
+        <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" style="width:12px;height:12px;" aria-hidden="true"><polyline points="2 8 6 12 14 4"/></svg>
+        Select Tax
+      </span>
+      <span class="flow__sep">›</span>
+      <span class="flow__item done">
+        <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" style="width:12px;height:12px;" aria-hidden="true"><polyline points="2 8 6 12 14 4"/></svg>
+        Payment Method
+      </span>
+      <span class="flow__sep">›</span>
+      <span class="flow__item done">
+        <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" style="width:12px;height:12px;" aria-hidden="true"><polyline points="2 8 6 12 14 4"/></svg>
+        Confirm
+      </span>
+      <span class="flow__sep">›</span>
+      <span class="flow__item active">Receipt</span>
+    </nav>
+
+    <!-- Step bar -->
+    <div class="step-bar" aria-label="Progress steps">
+      <div class="step-bar__item done">
+        <div class="step-bar__dot">
+          <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.5" style="width:14px;height:14px;" aria-hidden="true"><polyline points="2 8 6 12 14 4"/></svg>
+        </div>
+        <span class="step-bar__label">Select Tax</span>
+      </div>
+      <div class="step-bar__item done">
+        <div class="step-bar__dot">
+          <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.5" style="width:14px;height:14px;" aria-hidden="true"><polyline points="2 8 6 12 14 4"/></svg>
+        </div>
+        <span class="step-bar__label">Payment Method</span>
+      </div>
+      <div class="step-bar__item done">
+        <div class="step-bar__dot">
+          <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.5" style="width:14px;height:14px;" aria-hidden="true"><polyline points="2 8 6 12 14 4"/></svg>
+        </div>
+        <span class="step-bar__label">Confirm</span>
+      </div>
+      <div class="step-bar__item active">
+        <div class="step-bar__dot">
+          <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.5" style="width:14px;height:14px;" aria-hidden="true"><polyline points="2 8 6 12 14 4"/></svg>
+        </div>
+        <span class="step-bar__label">Receipt</span>
+      </div>
+    </div>
+
+    <!-- Centred receipt wrapper -->
+    <div class="receipt-wrapper">
+
+      <!-- Success Banner -->
+      <div class="success-banner" role="status" aria-live="polite">
+        <div class="success-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+            <polyline points="20 6 9 17 4 12"/>
+          </svg>
+        </div>
+        <h1 class="success-title">Payment Successful!</h1>
+        <p class="success-sub">Your tax payment has been received and confirmed by SmartCities Revenue Service.</p>
+      </div>
+
+      <!-- Receipt Card -->
+      <div class="receipt-card" id="receipt-printable">
+        <div class="receipt-card__header">
+          <div>
+            <div class="receipt-card__title">Official Tax Payment Receipt</div>
+            <div class="receipt-card__no">Receipt No: <span id="rcp-header-no">—</span></div>
+          </div>
+          <!-- SmartCities logo (print-friendly) -->
+          <svg viewBox="0 0 40 40" fill="none" style="width:40px;height:40px;" aria-hidden="true">
+            <rect width="40" height="40" rx="8" fill="rgba(255,255,255,0.15)"/>
+            <path d="M8 30 L8 18 L14 12 L20 18 L20 10 L26 10 L26 18 L32 18 L32 30 Z" fill="#fff" opacity="0.9"/>
+            <rect x="17" y="22" width="6" height="8" rx="1" fill="rgba(16,86,82,0.5)"/>
+          </svg>
+        </div>
+
+        <div class="receipt-body">
+
+          <!-- Taxpayer section -->
+          <div style="padding:12px 24px 4px;background:var(--teal-bg);">
+            <p style="font-size:.73rem;font-weight:700;text-transform:uppercase;letter-spacing:.6px;color:var(--text-light);">Taxpayer</p>
+          </div>
+          <div class="receipt-row">
+            <span class="receipt-row__label">Full Name</span>
+            <span class="receipt-row__value" id="rcp-citizen">—</span>
+          </div>
+          <div class="receipt-row">
+            <span class="receipt-row__label">Citizen ID</span>
+            <span class="receipt-row__value" id="rcp-citizen-id">—</span>
+          </div>
+
+          <!-- Transaction section -->
+          <div style="padding:12px 24px 4px;background:var(--teal-bg);">
+            <p style="font-size:.73rem;font-weight:700;text-transform:uppercase;letter-spacing:.6px;color:var(--text-light);">Transaction</p>
+          </div>
+          <div class="receipt-row">
+            <span class="receipt-row__label">Receipt No.</span>
+            <span class="receipt-row__value" id="rcp-no">—</span>
+          </div>
+          <div class="receipt-row">
+            <span class="receipt-row__label">Date &amp; Time</span>
+            <span class="receipt-row__value" id="rcp-date">—</span>
+          </div>
+          <div class="receipt-row">
+            <span class="receipt-row__label">PRN</span>
+            <span class="receipt-row__value" id="rcp-prn" style="font-family:'Courier New',monospace;letter-spacing:1px;">—</span>
+          </div>
+
+          <!-- Payment section -->
+          <div style="padding:12px 24px 4px;background:var(--teal-bg);">
+            <p style="font-size:.73rem;font-weight:700;text-transform:uppercase;letter-spacing:.6px;color:var(--text-light);">Payment Details</p>
+          </div>
+          <div class="receipt-row">
+            <span class="receipt-row__label">Tax Category</span>
+            <span class="receipt-row__value" id="rcp-taxtype">—</span>
+          </div>
+          <div class="receipt-row">
+            <span class="receipt-row__label">Tax Period</span>
+            <span class="receipt-row__value" id="rcp-period">—</span>
+          </div>
+          <div class="receipt-row">
+            <span class="receipt-row__label">Bill Reference</span>
+            <span class="receipt-row__value" id="rcp-ref">—</span>
+          </div>
+          <div class="receipt-row">
+            <span class="receipt-row__label">Payment Method</span>
+            <span class="receipt-row__value" id="rcp-method">—</span>
+          </div>
+
+          <!-- Amounts section -->
+          <div style="padding:12px 24px 4px;background:var(--teal-bg);">
+            <p style="font-size:.73rem;font-weight:700;text-transform:uppercase;letter-spacing:.6px;color:var(--text-light);">Amounts</p>
+          </div>
+          <div class="receipt-row">
+            <span class="receipt-row__label">Amount Paid</span>
+            <span class="receipt-row__value" id="rcp-amount">—</span>
+          </div>
+          <div class="receipt-row">
+            <span class="receipt-row__label">Processing Fee</span>
+            <span class="receipt-row__value" id="rcp-fee">KSh 0</span>
+          </div>
+          <div class="receipt-row receipt-row--total">
+            <span class="receipt-row__label">Total Paid</span>
+            <span class="receipt-row__value" id="rcp-total">—</span>
+          </div>
+        </div>
+
+        <!-- Receipt footer -->
+        <div style="background:var(--teal-bg);border-top:1px solid var(--teal-light);padding:16px 24px;text-align:center;">
+          <p style="font-size:.78rem;color:var(--text-light);">
+            This is an official receipt issued by <strong>SmartCities Revenue Service</strong>,
+            Nairobi City County Government.<br/>
+            For queries call <strong>0800 723 151</strong> or email <strong>revenue@smartcities.go.ke</strong>
+          </p>
+        </div>
+      </div>
+
+      <!-- Action buttons -->
+      <div class="receipt-actions">
+        <button id="print-btn" class="pay-btn" type="button" style="flex:1;">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            class="pay-btn__icon" aria-hidden="true">
+            <polyline points="6 9 6 2 18 2 18 9"/>
+            <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/>
+            <rect x="6" y="14" width="12" height="8"/>
+          </svg>
+          Print Receipt
+        </button>
+
+        <button id="download-btn" class="btn-outline" type="button" style="flex:1;">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            style="width:17px;height:17px;" aria-hidden="true">
+            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+            <polyline points="7 10 12 15 17 10"/>
+            <line x1="12" y1="15" x2="12" y2="3"/>
+          </svg>
+          Download (.txt)
+        </button>
+
+        <a href="payments.html" class="btn-ghost" style="flex:1;justify-content:center;">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            style="width:16px;height:16px;" aria-hidden="true">
+            <rect x="1" y="4" width="22" height="16" rx="2"/>
+            <line x1="1" y1="10" x2="23" y2="10"/>
+          </svg>
+          Pay Another Tax
+        </a>
+
+        <a href="dashboard.html" class="btn-ghost" style="flex:1;justify-content:center;">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            style="width:16px;height:16px;" aria-hidden="true">
+            <rect x="3" y="3" width="7" height="7" rx="1"/>
+            <rect x="14" y="3" width="7" height="7" rx="1"/>
+            <rect x="3" y="14" width="7" height="7" rx="1"/>
+            <rect x="14" y="14" width="7" height="7" rx="1"/>
+          </svg>
+          Back to Dashboard
+        </a>
+      </div>
+
+    </div>
+
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

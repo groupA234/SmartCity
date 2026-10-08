@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SmartCities – Payment Method</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!--Sidebar -->
+  <aside class="sidebar">
+    <div class="sidebar__brand">
+      <div class="sidebar__logo">
+        <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <rect width="40" height="40" rx="10" fill="#105652"/>
+          <path d="M8 30 L8 18 L14 12 L20 18 L20 10 L26 10 L26 18 L32 18 L32 30 Z" fill="#fff" opacity="0.9"/>
+          <rect x="17" y="22" width="6" height="8" rx="1" fill="#105652"/>
+        </svg>
+      </div>
+      <span class="sidebar__title">SmartCities</span>
+    </div>
+
+    <nav class="sidebar__nav" aria-label="Main navigation">
+      <ul>
+        <li>
+          <a class="nav-item" href="dashboard.html" data-page="dashboard">
+            <span class="nav-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>
+            </span>
+            <span class="nav-label">Dashboard</span>
+          </a>
+        </li>
+        <li>
+          <a class="nav-item active" href="payments.html" data-page="payments">
+            <span class="nav-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="1" y="4" width="22" height="16" rx="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
+            </span>
+            <span class="nav-label">Pay Taxes</span>
+          </a>
+        </li>
+        <li>
+          <a class="nav-item" href="#" data-page="history">
+            <span class="nav-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+            </span>
+            <span class="nav-label">History</span>
+          </a>
+        </li>
+        <li>
+          <a class="nav-item" href="#" data-page="profile">
+            <span class="nav-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+            </span>
+            <span class="nav-label">My Profile</span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+
+    <div class="sidebar__user">
+      <div class="user-avatar" aria-hidden="true">JM</div>
+      <div class="user-info">
+        <span class="user-name">James Mwangi</span>
+        <span class="user-id">ID: SC-2024-00482</span>
+      </div>
+    </div>
+  </aside>
+
+  <!--Main-->
+  <main class="main">
+
+    <!-- flow -->
+    <nav class="flow" aria-label="Payment flow">
+      <span class="flow__item done">
+        <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" style="width:12px;height:12px;" aria-hidden="true"><polyline points="2 8 6 12 14 4"/></svg>
+        Dashboard
+      </span>
+      <span class="flow__sep">›</span>
+      <span class="flow__item done">
+        <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" style="width:12px;height:12px;" aria-hidden="true"><polyline points="2 8 6 12 14 4"/></svg>
+        Select Tax
+      </span>
+      <span class="flow__sep">›</span>
+      <span class="flow__item active">Payment Method</span>
+      <span class="flow__sep">›</span>
+      <span class="flow__item">Confirm</span>
+      <span class="flow__sep">›</span>
+      <span class="flow__item">Receipt</span>
+    </nav>
+
+    <!-- Step bar -->
+    <div class="step-bar" aria-label="Progress steps">
+      <div class="step-bar__item done">
+        <div class="step-bar__dot">
+          <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.5" style="width:14px;height:14px;" aria-hidden="true"><polyline points="2 8 6 12 14 4"/></svg>
+        </div>
+        <span class="step-bar__label">Select Tax</span>
+      </div>
+      <div class="step-bar__item active">
+        <div class="step-bar__dot">2</div>
+        <span class="step-bar__label">Payment Method</span>
+      </div>
+      <div class="step-bar__item">
+        <div class="step-bar__dot">3</div>
+        <span class="step-bar__label">Confirm</span>
+      </div>
+      <div class="step-bar__item">
+        <div class="step-bar__dot">4</div>
+        <span class="step-bar__label">Receipt</span>
+      </div>
+    </div>
+
+    <header class="page-header">
+      <div>
+        <h1 class="page-title">Choose Payment Method</h1>
+        <p class="page-sub">Select how you want to pay your tax obligation.</p>
+      </div>
+      <a href="payments.html" class="btn-ghost">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="15 18 9 12 15 6"/></svg>
+        Back
+      </a>
+    </header>
+
+    <div class="payment-layout">
+
+      <!-- LEFT: Method selection + detail forms -->
+      <div class="payment-form-col">
+
+        <!-- Method cards -->
+        <div class="form-card">
+          <h2 class="form-card__title">Payment Options</h2>
+
+          <div class="method-cards" role="radiogroup" aria-label="Select payment method">
+
+            <!-- M-Pesa -->
+            <label class="method-card" data-method="mpesa">
+              <input type="radio" name="pay-method" value="mpesa" />
+              <span class="method-card__check" aria-hidden="true"></span>
+              <svg viewBox="0 0 56 36" class="method-card__icon" aria-hidden="true">
+                <rect width="56" height="36" rx="6" fill="#00a651"/>
+                <text x="5" y="23" font-family="Arial" font-size="11" font-weight="bold" fill="#fff">M-PESA</text>
+              </svg>
+              <div class="method-card__name">M-Pesa</div>
+              <div class="method-card__desc">Pay via Safaricom STK Push</div>
+            </label>
+
+            <!-- Bank Transfer -->
+            <label class="method-card" data-method="bank">
+              <input type="radio" name="pay-method" value="bank" />
+              <span class="method-card__check" aria-hidden="true"></span>
+              <svg viewBox="0 0 56 36" class="method-card__icon" aria-hidden="true">
+                <rect width="56" height="36" rx="6" fill="#105652"/>
+                <text x="9" y="23" font-family="Arial" font-size="11" font-weight="bold" fill="#fff">BANK</text>
+              </svg>
+              <div class="method-card__name">Bank Transfer</div>
+              <div class="method-card__desc">EFT or direct bank deposit</div>
+            </label>
+
+            <!-- Card -->
+            <label class="method-card" data-method="card">
+              <input type="radio" name="pay-method" value="card" />
+              <span class="method-card__check" aria-hidden="true"></span>
+              <svg viewBox="0 0 56 36" class="method-card__icon" aria-hidden="true">
+                <rect width="56" height="36" rx="6" fill="#1A1F71"/>
+                <text x="8" y="23" font-family="Arial" font-size="11" font-weight="bold" fill="#fff">VISA</text>
+              </svg>
+              <div class="method-card__name">Debit / Credit Card</div>
+              <div class="method-card__desc">Visa, Mastercard accepted</div>
+            </label>
+
+          </div>
+        </div>
+
+        <!--M-Pesa form-->
+        <div class="form-card method-form" id="form-mpesa">
+          <h2 class="form-card__title">M-Pesa Payment</h2>
+
+          <div class="mpesa-steps" aria-label="M-Pesa instructions">
+            <div class="mpesa-step">
+              <span class="mpesa-step__num">1</span>
+              <span>Go to <strong>M-Pesa</strong> on your phone</span>
+            </div>
+            <div class="mpesa-step">
+              <span class="mpesa-step__num">2</span>
+              <span>Select <strong>Lipa na M-Pesa → Pay Bill</strong></span>
+            </div>
+            <div class="mpesa-step">
+              <span class="mpesa-step__num">3</span>
+              <span>Business No: <strong>333777</strong></span>
+            </div>
+            <div class="mpesa-step">
+              <span class="mpesa-step__num">4</span>
+              <span>Account No: <strong>SC-2024-00482</strong></span>
+            </div>
+          </div>
+
+          <div class="field-group">
+            <label class="field-label" for="mpesa-phone">
+              Your M-Pesa Number <span style="color:var(--red)">*</span>
+            </label>
+            <input class="field-input" type="tel" id="mpesa-phone"
+              placeholder="+254 7XX XXX XXX" autocomplete="tel" />
+          </div>
+
+          <div class="mpesa-notice">
+            Enter your number and click <strong>Proceed to Confirm</strong> — an STK push will be
+            sent to your phone before the final confirmation.
+          </div>
+        </div>
+
+        <!--Bank Transfer form-->
+        <div class="form-card method-form" id="form-bank">
+          <h2 class="form-card__title">Bank Transfer Details</h2>
+
+          <div class="bank-details" aria-label="County bank account details">
+            <div class="bank-detail-row">
+              <span class="bank-detail-row__label">Bank Name</span>
+              <span class="bank-detail-row__value">Nairobi City County Bank</span>
+            </div>
+            <div class="bank-detail-row">
+              <span class="bank-detail-row__label">Account Name</span>
+              <span class="bank-detail-row__value">SmartCities Revenue</span>
+            </div>
+            <div class="bank-detail-row">
+              <span class="bank-detail-row__label">Account Number</span>
+              <span class="bank-detail-row__value">0102030405</span>
+            </div>
+            <div class="bank-detail-row">
+              <span class="bank-detail-row__label">Branch</span>
+              <span class="bank-detail-row__value">City Hall Branch</span>
+            </div>
+            <div class="bank-detail-row">
+              <span class="bank-detail-row__label">Swift / BIC</span>
+              <span class="bank-detail-row__value">NCCBKENA</span>
+            </div>
+            <div class="bank-detail-row">
+              <span class="bank-detail-row__label">Narration / Ref</span>
+              <span class="bank-detail-row__value">SC-2024-00482</span>
+            </div>
+          </div>
+
+          <div class="field-group">
+            <label class="field-label" for="bank-ref">
+              Your Transfer Reference / Slip No. <span style="color:var(--red)">*</span>
+            </label>
+            <input class="field-input" type="text" id="bank-ref"
+              placeholder="e.g. TXN-20261008-00123" />
+          </div>
+        </div>
+
+        <!--Card form-->
+        <div class="form-card method-form" id="form-card">
+          <h2 class="form-card__title">Card Details</h2>
+
+          <!-- Visual card preview -->
+          <div class="card-preview" aria-label="Card visual preview" role="img">
+            <div class="card-preview__top">
+              <span class="card-preview__bank">SmartCities Portal</span>
+              <svg viewBox="0 0 46 28" class="card-preview__logo" aria-hidden="true">
+                <rect width="46" height="28" rx="4" fill="rgba(255,255,255,0.15)"/>
+                <text x="5" y="20" font-family="Arial" font-size="12" font-weight="bold" fill="#fff">VISA</text>
+              </svg>
+            </div>
+            <div class="card-preview__chip" aria-hidden="true"></div>
+            <div class="card-preview__number" id="preview-number">**** **** **** ****</div>
+            <div class="card-preview__footer">
+              <span class="card-preview__name" id="preview-name">CARDHOLDER NAME</span>
+              <span class="card-preview__expiry" id="preview-expiry">MM/YY</span>
+            </div>
+          </div>
+
+          <div class="field-group">
+            <label class="field-label" for="card-name">Cardholder Name <span style="color:var(--red)">*</span></label>
+            <input class="field-input" type="text" id="card-name"
+              placeholder="As it appears on the card" autocomplete="cc-name" />
+          </div>
+
+          <div class="field-group">
+            <label class="field-label" for="card-number">Card Number <span style="color:var(--red)">*</span></label>
+            <input class="field-input" type="text" id="card-number"
+              placeholder="**** **** **** ****" maxlength="19"
+              autocomplete="cc-number" inputmode="numeric" />
+          </div>
+
+          <div class="field-row">
+            <div class="field-group">
+              <label class="field-label" for="card-expiry">Expiry Date <span style="color:var(--red)">*</span></label>
+              <input class="field-input" type="text" id="card-expiry"
+                placeholder="MM/YY" maxlength="5"
+                autocomplete="cc-exp" inputmode="numeric" />
+            </div>
+            <div class="field-group">
+              <label class="field-label" for="card-cvv">CVV <span style="color:var(--red)">*</span></label>
+              <input class="field-input" type="password" id="card-cvv"
+                placeholder="•••" maxlength="4"
+                autocomplete="cc-csc" inputmode="numeric" />
+            </div>
+          </div>
+        </div>
+
+        <!-- Proceed button -->
+        <button id="proceed-confirm-btn" class="pay-btn" type="button">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            class="pay-btn__icon" aria-hidden="true">
+            <polyline points="9 18 15 12 9 6"/>
+          </svg>
+          Proceed to Confirm
+        </button>
+
+      </div>
+
+      <!-- RIGHT: Order summary -->
+      <div class="payment-summary-col">
+        <div class="order-summary">
+          <h2 class="order-summary__title">Payment Summary</h2>
+          <div class="order-summary__body">
+            <div class="order-row">
+              <span>Tax Category</span>
+              <span id="sum-taxtype">—</span>
+            </div>
+            <div class="order-row">
+              <span>Period</span>
+              <span id="sum-period">—</span>
+            </div>
+            <div class="order-row">
+              <span>Reference</span>
+              <span id="sum-ref">—</span>
+            </div>
+            <div class="order-row">
+              <span>Method</span>
+              <span id="sum-method">—</span>
+            </div>
+            <hr class="order-divider" />
+            <div class="order-row order-row--amount">
+              <span>Amount</span>
+              <span class="order-amount" id="sum-amount">—</span>
+            </div>
+            <div class="order-row order-row--fee">
+              <span>Processing Fee</span>
+              <span>KSh 0</span>
+            </div>
+            <hr class="order-divider" />
+            <div class="order-row order-row--total">
+              <span>Total</span>
+              <span class="order-total" id="sum-total">—</span>
+            </div>
+          </div>
+          <p class="secure-note">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              style="width:13px;height:13px;vertical-align:middle;margin-right:4px;" aria-hidden="true">
+              <rect x="3" y="11" width="18" height="11" rx="2"/>
+              <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+            </svg>
+            All transactions are encrypted and secure.
+          </p>
+        </div>
+
+        <!-- Help card -->
+        <div class="form-card" style="margin-bottom:0;">
+          <h2 class="form-card__title">Need Help?</h2>
+          <p style="font-size:.85rem;color:var(--text-mid);margin-bottom:10px;">
+            Contact the SmartCities Revenue Helpdesk if you experience any issues.
+          </p>
+          <p style="font-size:.85rem;font-weight:700;color:var(--teal);">📞 0800 723 151</p>
+          <p style="font-size:.82rem;color:var(--text-light);margin-top:2px;">Mon–Fri, 8 am – 5 pm</p>
+        </div>
+      </div>
+
+    </div><!-- payment-layout -->
+
+  </main>
+
+  <script src="script.js"></script>
+  <script>
+    // Live card preview updates
+    document.addEventListener('DOMContentLoaded', function () {
+      var cardName   = document.getElementById('card-name');
+      var cardNumber = document.getElementById('card-number');
+      var cardExpiry = document.getElementById('card-expiry');
+
+      var prevName   = document.getElementById('preview-name');
+      var prevNumber = document.getElementById('preview-number');
+      var prevExpiry = document.getElementById('preview-expiry');
+
+      if (cardName && prevName) {
+        cardName.addEventListener('input', function () {
+          prevName.textContent = cardName.value.toUpperCase() || 'CARDHOLDER NAME';
+        });
+      }
+      if (cardNumber && prevNumber) {
+        cardNumber.addEventListener('input', function () {
+          var v = cardNumber.value.replace(/\s/g, '');
+          var masked = v.replace(/\d(?=\d{4})/g, '*');
+          var spaced = masked.match(/.{1,4}/g);
+          prevNumber.textContent = spaced ? spaced.join(' ') : '**** **** **** ****';
+        });
+      }
+      if (cardExpiry && prevExpiry) {
+        cardExpiry.addEventListener('input', function () {
+          prevExpiry.textContent = cardExpiry.value || 'MM/YY';
+        });
+      }
+
+      // Update method label in summary when a card is selected
+      var methodCards = document.querySelectorAll('.method-card');
+      var sumMethod   = document.getElementById('sum-method');
+      methodCards.forEach(function (card) {
+        card.addEventListener('click', function () {
+          if (sumMethod) {
+            var nameEl = card.querySelector('.method-card__name');
+            sumMethod.textContent = nameEl ? nameEl.textContent : '—';
+          }
+        });
+      });
+    });
+  </script>
+</body>
+</html>

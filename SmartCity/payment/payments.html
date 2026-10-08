@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SmartCities – Pay Taxes</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!--Sidebar-->
+  <aside class="sidebar">
+    <div class="sidebar__brand">
+      <div class="sidebar__logo">
+        <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <rect width="40" height="40" rx="10" fill="#105652"/>
+          <path d="M8 30 L8 18 L14 12 L20 18 L20 10 L26 10 L26 18 L32 18 L32 30 Z" fill="#fff" opacity="0.9"/>
+          <rect x="17" y="22" width="6" height="8" rx="1" fill="#105652"/>
+        </svg>
+      </div>
+      <span class="sidebar__title">SmartCities</span>
+    </div>
+
+    <nav class="sidebar__nav" aria-label="Main navigation">
+      <ul>
+        <li>
+          <a class="nav-item" href="dashboard.html" data-page="dashboard">
+            <span class="nav-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>
+            </span>
+            <span class="nav-label">Dashboard</span>
+          </a>
+        </li>
+        <li>
+          <a class="nav-item active" href="payments.html" data-page="payments">
+            <span class="nav-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="1" y="4" width="22" height="16" rx="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
+            </span>
+            <span class="nav-label">Pay Taxes</span>
+          </a>
+        </li>
+        <li>
+          <a class="nav-item" href="#" data-page="history">
+            <span class="nav-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+            </span>
+            <span class="nav-label">History</span>
+          </a>
+        </li>
+        <li>
+          <a class="nav-item" href="#" data-page="profile">
+            <span class="nav-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+            </span>
+            <span class="nav-label">My Profile</span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+
+    <div class="sidebar__user">
+      <div class="user-avatar" aria-hidden="true">JM</div>
+      <div class="user-info">
+        <span class="user-name">James Mwangi</span>
+        <span class="user-id">ID: SC-2024-00482</span>
+      </div>
+    </div>
+  </aside>
+
+ 
+  <main class="main">
+
+    <!-- flow -->
+    <nav class="flow" aria-label="Payment flow">
+      <span class="flow__item done">
+        <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" style="width:12px;height:12px;" aria-hidden="true"><polyline points="2 8 6 12 14 4"/></svg>
+        Dashboard
+      </span>
+      <span class="flow__sep">›</span>
+      <span class="flow__item active">Select Tax</span>
+      <span class="flow__sep">›</span>
+      <span class="flow__item">Payment Method</span>
+      <span class="flow__sep">›</span>
+      <span class="flow__item">Confirm</span>
+      <span class="flow__sep">›</span>
+      <span class="flow__item">Receipt</span>
+    </nav>
+
+    <!-- Step bar -->
+    <div class="step-bar" aria-label="Progress steps">
+      <div class="step-bar__item active">
+        <div class="step-bar__dot">1</div>
+        <span class="step-bar__label">Select Tax</span>
+      </div>
+      <div class="step-bar__item">
+        <div class="step-bar__dot">2</div>
+        <span class="step-bar__label">Payment Method</span>
+      </div>
+      <div class="step-bar__item">
+        <div class="step-bar__dot">3</div>
+        <span class="step-bar__label">Confirm</span>
+      </div>
+      <div class="step-bar__item">
+        <div class="step-bar__dot">4</div>
+        <span class="step-bar__label">Receipt</span>
+      </div>
+    </div>
+
+    <header class="page-header">
+      <div>
+        <h1 class="page-title">Select Tax &amp; Amount</h1>
+        <p class="page-sub">Choose the tax category, period and amount you want to pay.</p>
+      </div>
+      <a href="dashboard.html" class="btn-ghost">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="15 18 9 12 15 6"/></svg>
+        Back to Dashboard
+      </a>
+    </header>
+
+    <div class="payment-layout">
+
+      <!-- LEFT: Form -->
+      <div class="payment-form-col">
+        <form id="payments-form" novalidate>
+
+          <!-- Tax Type -->
+          <div class="form-card">
+            <h2 class="form-card__title">Tax Category</h2>
+
+            <div class="field-group">
+              <label class="field-label" for="tax-type">Tax Type <span style="color:var(--red)">*</span></label>
+              <select class="field-input field-select" id="tax-type" name="tax-type" required>
+                <option value="">— Select tax category —</option>
+                <option value="property">Property Tax (Balance: KSh 10,000)</option>
+                <option value="business">Business Licence (Balance: KSh 3,800)</option>
+                <option value="land">Land Rate (Balance: KSh 6,500)</option>
+                <option value="parking">Parking Levy (Balance: KSh 10,000)</option>
+              </select>
+            </div>
+
+            <div class="field-group">
+              <label class="field-label" for="tax-period">Tax Period <span style="color:var(--red)">*</span></label>
+              <select class="field-input field-select" id="tax-period" name="tax-period" required>
+                <option value="">— Select period —</option>
+                <option value="FY 2025/2026" selected>FY 2025/2026 (Current)</option>
+                <option value="FY 2024/2025">FY 2024/2025</option>
+                <option value="FY 2023/2024">FY 2023/2024</option>
+              </select>
+            </div>
+
+            <div class="field-group">
+              <label class="field-label" for="bill-ref">Reference / Bill Number <span style="color:var(--red)">*</span></label>
+              <input class="field-input" type="text" id="bill-ref" name="bill-ref"
+                placeholder="e.g. SC-2024-00482-PT" required />
+              <p style="font-size:.76rem;color:var(--text-light);margin-top:4px;">
+                Find your bill number on your county demand notice.
+              </p>
+            </div>
+          </div>
+
+          <!-- Amount -->
+          <div class="form-card">
+            <h2 class="form-card__title">Payment Amount</h2>
+
+            <div class="amount-options" role="radiogroup" aria-label="Payment amount options">
+              <label class="amount-option">
+                <input type="radio" name="amount-preset" value="10100" checked />
+                <span class="amount-option__box">
+                  <span class="amount-option__label">Next Instalment</span>
+                  <span class="amount-option__val">KSh 10,100</span>
+                </span>
+              </label>
+              <label class="amount-option">
+                <input type="radio" name="amount-preset" value="30300" />
+                <span class="amount-option__box">
+                  <span class="amount-option__label">Full Balance</span>
+                  <span class="amount-option__val">KSh 30,300</span>
+                </span>
+              </label>
+              <label class="amount-option">
+                <input type="radio" name="amount-preset" value="custom" />
+                <span class="amount-option__box">
+                  <span class="amount-option__label">Custom Amount</span>
+                  <span class="amount-option__val">Enter below</span>
+                </span>
+              </label>
+            </div>
+
+            <div class="field-group">
+              <label class="field-label" for="custom-amount">
+                Amount (KSh) <span style="color:var(--red)">*</span>
+              </label>
+              <input class="field-input" type="number" id="custom-amount" name="custom-amount"
+                placeholder="e.g. 5000" min="100" value="10100" />
+              <p id="balance-note" style="font-size:.76rem;color:var(--teal);margin-top:4px;font-weight:600;"></p>
+            </div>
+          </div>
+
+          <div style="display:flex;gap:12px;flex-wrap:wrap;">
+            <!-- form submit handled by SC.initPaymentsForm() in script.js → navigates to payment-method.html -->
+            <button type="submit" class="pay-btn" style="flex:1;min-width:200px;">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="pay-btn__icon" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
+              Continue to Payment Method
+            </button>
+          </div>
+
+        </form>
+      </div>
+
+      <!-- RIGHT: Payment slip preview -->
+      <div class="payment-summary-col">
+        <div class="order-summary">
+          <h2 class="order-summary__title">Payment Slip Preview</h2>
+          <div class="order-summary__body">
+            <div class="order-row">
+              <span>Citizen</span>
+              <span>James Mwangi</span>
+            </div>
+            <div class="order-row">
+              <span>Citizen ID</span>
+              <span>SC-2024-00482</span>
+            </div>
+            <hr class="order-divider" />
+            <div class="order-row">
+              <span>Tax Category</span>
+              <span id="slip-taxtype">—</span>
+            </div>
+            <div class="order-row">
+              <span>Period</span>
+              <span id="slip-period">—</span>
+            </div>
+            <div class="order-row">
+              <span>Reference</span>
+              <span id="slip-ref">—</span>
+            </div>
+            <hr class="order-divider" />
+            <div class="order-row order-row--amount">
+              <span>Amount</span>
+              <span class="order-amount" id="slip-amount">KSh 10,100</span>
+            </div>
+            <div class="order-row order-row--fee">
+              <span>Processing Fee</span>
+              <span>KSh 0</span>
+            </div>
+            <hr class="order-divider" />
+            <div class="order-row order-row--total">
+              <span>Total</span>
+              <span class="order-total" id="slip-total">KSh 10,100</span>
+            </div>
+          </div>
+          <p class="secure-note">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              style="width:13px;height:13px;vertical-align:middle;margin-right:4px;" aria-hidden="true">
+              <rect x="3" y="11" width="18" height="11" rx="2"/>
+              <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+            </svg>
+            All transactions are encrypted and secure.
+          </p>
+        </div>
+
+        <!-- Balance after payment -->
+        <div class="after-pay-card">
+          <span class="after-pay-card__label">Balance after this payment</span>
+          <span class="after-pay-card__value" id="after-pay-balance">KSh 20,200</span>
+          <span class="after-pay-card__note">Estimate based on selected amount</span>
+        </div>
+      </div>
+
+    </div><!-- /payment-layout -->
+
+  </main>
+
+  <script src="script.js"></script>
+  <script>
+    // Sync slip-total and after-pay whenever amount changes
+    document.addEventListener('DOMContentLoaded', function () {
+      var amountInput   = document.getElementById('custom-amount');
+      var slipTotal     = document.getElementById('slip-total');
+      var afterPayEl    = document.getElementById('after-pay-balance');
+      var TOTAL_BALANCE = 30300;
+
+      function syncTotal () {
+        var v = parseFloat(amountInput.value) || 0;
+        if (slipTotal) slipTotal.textContent = 'KSh ' + v.toLocaleString('en-KE');
+        if (afterPayEl) {
+          var rem = Math.max(0, TOTAL_BALANCE - v);
+          afterPayEl.textContent = 'KSh ' + rem.toLocaleString('en-KE');
+        }
+      }
+
+      if (amountInput) amountInput.addEventListener('input', syncTotal);
+      syncTotal();
+    });
+  </script>
+</body>
+</html>

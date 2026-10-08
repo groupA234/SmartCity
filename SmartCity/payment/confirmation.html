@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SmartCities – Confirm Payment</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!--  Sidebar -->
+  <aside class="sidebar">
+    <div class="sidebar__brand">
+      <div class="sidebar__logo">
+        <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <rect width="40" height="40" rx="10" fill="#105652"/>
+          <path d="M8 30 L8 18 L14 12 L20 18 L20 10 L26 10 L26 18 L32 18 L32 30 Z" fill="#fff" opacity="0.9"/>
+          <rect x="17" y="22" width="6" height="8" rx="1" fill="#105652"/>
+        </svg>
+      </div>
+      <span class="sidebar__title">SmartCities</span>
+    </div>
+
+    <nav class="sidebar__nav" aria-label="Main navigation">
+      <ul>
+        <li>
+          <a class="nav-item" href="dashboard.html" data-page="dashboard">
+            <span class="nav-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>
+            </span>
+            <span class="nav-label">Dashboard</span>
+          </a>
+        </li>
+        <li>
+          <a class="nav-item active" href="payments.html" data-page="payments">
+            <span class="nav-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="1" y="4" width="22" height="16" rx="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
+            </span>
+            <span class="nav-label">Pay Taxes</span>
+          </a>
+        </li>
+        <li>
+          <a class="nav-item" href="#" data-page="history">
+            <span class="nav-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+            </span>
+            <span class="nav-label">History</span>
+          </a>
+        </li>
+        <li>
+          <a class="nav-item" href="#" data-page="profile">
+            <span class="nav-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+            </span>
+            <span class="nav-label">My Profile</span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+
+    <div class="sidebar__user">
+      <div class="user-avatar" aria-hidden="true">JM</div>
+      <div class="user-info">
+        <span class="user-name">James Mwangi</span>
+        <span class="user-id">ID: SC-2024-00482</span>
+      </div>
+    </div>
+  </aside>
+
+
+  <main class="main">
+
+    <!-- Paymentflow -->
+    <nav class="flow" aria-label="Payment flow">
+      <span class="flow__item done">
+        <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" style="width:12px;height:12px;" aria-hidden="true"><polyline points="2 8 6 12 14 4"/></svg>
+        Dashboard
+      </span>
+      <span class="flow__sep">›</span>
+      <span class="flow__item done">
+        <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" style="width:12px;height:12px;" aria-hidden="true"><polyline points="2 8 6 12 14 4"/></svg>
+        Select Tax
+      </span>
+      <span class="flow__sep">›</span>
+      <span class="flow__item done">
+        <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" style="width:12px;height:12px;" aria-hidden="true"><polyline points="2 8 6 12 14 4"/></svg>
+        Payment Method
+      </span>
+      <span class="flow__sep">›</span>
+      <span class="flow__item active">Confirm</span>
+      <span class="flow__sep">›</span>
+      <span class="flow__item">Receipt</span>
+    </nav>
+
+    <!-- Step bar -->
+    <div class="step-bar" aria-label="Progress steps">
+      <div class="step-bar__item done">
+        <div class="step-bar__dot">
+          <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.5" style="width:14px;height:14px;" aria-hidden="true"><polyline points="2 8 6 12 14 4"/></svg>
+        </div>
+        <span class="step-bar__label">Select Tax</span>
+      </div>
+      <div class="step-bar__item done">
+        <div class="step-bar__dot">
+          <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.5" style="width:14px;height:14px;" aria-hidden="true"><polyline points="2 8 6 12 14 4"/></svg>
+        </div>
+        <span class="step-bar__label">Payment Method</span>
+      </div>
+      <div class="step-bar__item active">
+        <div class="step-bar__dot">3</div>
+        <span class="step-bar__label">Confirm</span>
+      </div>
+      <div class="step-bar__item">
+        <div class="step-bar__dot">4</div>
+        <span class="step-bar__label">Receipt</span>
+      </div>
+    </div>
+
+    <header class="page-header">
+      <div>
+        <h1 class="page-title">Review &amp; Confirm</h1>
+        <p class="page-sub">Check all details carefully. Your Payment Reference Number (PRN) is shown below.</p>
+      </div>
+      <a href="payment-method.html" class="btn-ghost">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="15 18 9 12 15 6"/></svg>
+        Back
+      </a>
+    </header>
+
+    <div class="payment-layout">
+
+      <!-- LEFT: PRN + Details -->
+      <div class="payment-form-col">
+
+        <!-- PRN Box -->
+        <div class="prn-box" aria-label="Payment Reference Number">
+          <p class="prn-box__label">Your Payment Reference Number (PRN)</p>
+          <p class="prn-box__code" id="prn-code">PRN-XXXX-XXXXXX</p>
+          <p class="prn-box__expire" id="prn-expiry">Generating…</p>
+          <p id="prn-countdown" style="font-size:.78rem;color:var(--text-light);margin-top:4px;font-weight:600;"></p>
+        </div>
+
+        <!-- Taxpayer -->
+        <div class="form-card" style="margin-bottom:16px;">
+          <h2 class="form-card__title">Taxpayer Details</h2>
+          <div class="confirm-details" style="box-shadow:none;border:1px solid var(--teal-light);">
+            <div class="confirm-row">
+              <span class="confirm-row__label">Full Name</span>
+              <span class="confirm-row__value" id="conf-citizen">James Mwangi</span>
+            </div>
+            <div class="confirm-row">
+              <span class="confirm-row__label">Citizen ID</span>
+              <span class="confirm-row__value" id="conf-citizen-id">SC-2024-00482</span>
+            </div>
+            <div class="confirm-row">
+              <span class="confirm-row__label">Date &amp; Time</span>
+              <span class="confirm-row__value" id="conf-date">—</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Payment Details -->
+        <div class="form-card" style="margin-bottom:16px;">
+          <h2 class="form-card__title">Payment Details</h2>
+          <div class="confirm-details" style="box-shadow:none;border:1px solid var(--teal-light);">
+            <div class="confirm-row">
+              <span class="confirm-row__label">Tax Category</span>
+              <span class="confirm-row__value" id="conf-taxtype">—</span>
+            </div>
+            <div class="confirm-row">
+              <span class="confirm-row__label">Tax Period</span>
+              <span class="confirm-row__value" id="conf-period">—</span>
+            </div>
+            <div class="confirm-row">
+              <span class="confirm-row__label">Bill Reference</span>
+              <span class="confirm-row__value" id="conf-ref">—</span>
+            </div>
+            <div class="confirm-row">
+              <span class="confirm-row__label">Payment Method</span>
+              <span class="confirm-row__value" id="conf-method">—</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Amount -->
+        <div class="confirm-details" style="margin-bottom:24px;">
+          <div class="confirm-row">
+            <span class="confirm-row__label">Amount</span>
+            <span class="confirm-row__value" id="conf-amount">—</span>
+          </div>
+          <div class="confirm-row">
+            <span class="confirm-row__label">Processing Fee</span>
+            <span class="confirm-row__value" id="conf-fee">KSh 0</span>
+          </div>
+          <div class="confirm-row confirm-row--total">
+            <span class="confirm-row__label">Total Payable</span>
+            <span class="confirm-row__value" id="conf-total">—</span>
+          </div>
+        </div>
+
+        <!-- Warning -->
+        <div style="background:#fffbeb;border:1px solid #fbbf24;border-radius:10px;padding:14px 18px;margin-bottom:20px;display:flex;gap:12px;align-items:flex-start;">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#d97706" stroke-width="2" style="width:20px;height:20px;flex-shrink:0;margin-top:1px;" aria-hidden="true">
+            <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/>
+            <line x1="12" y1="9" x2="12" y2="13"/>
+            <line x1="12" y1="17" x2="12.01" y2="17"/>
+          </svg>
+          <p style="font-size:.85rem;color:#92400e;">
+            By clicking <strong>Confirm &amp; Pay</strong> you authorise this payment. Ensure all
+            details are correct — payments cannot be reversed once processed.
+          </p>
+        </div>
+
+        <!-- Confirm button -->
+        <button id="confirm-pay-btn" class="pay-btn" type="button">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            class="pay-btn__icon" aria-hidden="true">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+          </svg>
+          Confirm &amp; Pay
+        </button>
+        <p class="secure-note" style="margin-top:14px;">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            style="width:13px;height:13px;vertical-align:middle;margin-right:4px;" aria-hidden="true">
+            <rect x="3" y="11" width="18" height="11" rx="2"/>
+            <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+          </svg>
+          Your transaction is protected by 256-bit SSL encryption.
+        </p>
+
+      </div>
+
+      <!-- RIGHT: Summary sidebar -->
+      <div class="payment-summary-col">
+        <div class="order-summary">
+          <h2 class="order-summary__title">Order Summary</h2>
+          <div class="order-summary__body">
+            <div class="order-row">
+              <span>Tax Category</span>
+              <span id="sum-taxtype">—</span>
+            </div>
+            <div class="order-row">
+              <span>Period</span>
+              <span id="sum-period">—</span>
+            </div>
+            <div class="order-row">
+              <span>Reference</span>
+              <span id="sum-ref">—</span>
+            </div>
+            <div class="order-row">
+              <span>Method</span>
+              <span id="sum-method">—</span>
+            </div>
+            <hr class="order-divider" />
+            <div class="order-row order-row--amount">
+              <span>Amount</span>
+              <span class="order-amount" id="sum-amount">—</span>
+            </div>
+            <div class="order-row order-row--fee">
+              <span>Processing Fee</span>
+              <span>KSh 0</span>
+            </div>
+            <hr class="order-divider" />
+            <div class="order-row order-row--total">
+              <span>Total</span>
+              <span class="order-total" id="sum-total">—</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- PRN info card -->
+        <div class="form-card" style="margin-bottom:0;background:var(--teal-bg);border:1px solid var(--teal-light);">
+          <h2 class="form-card__title" style="border-color:var(--teal-light);">About Your PRN</h2>
+          <p style="font-size:.83rem;color:var(--text-mid);line-height:1.6;">
+            Your <strong>Payment Reference Number</strong> is a unique code generated for this transaction.
+            Keep it safe — you'll need it to track or dispute this payment.
+            The PRN is valid for <strong>30 minutes</strong>.
+          </p>
+        </div>
+      </div>
+
+    </div><!-- /payment-layout -->
+
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
